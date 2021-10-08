@@ -1,8 +1,21 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import { getGraphQLData } from '../lib/topics'
 
-export default function Home() {
+
+export async function getStaticProps() {
+  const allTopicsData = await getGraphQLData()
+  console.log('allTopicsData is this', allTopicsData)
+
+  return {
+    props: {
+      allTopicsData: []
+    }
+  }
+}
+
+export default function Home({ allTopicsData }) {
   return (
     <div className={styles.container}>
       <Head>
