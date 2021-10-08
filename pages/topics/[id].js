@@ -1,12 +1,11 @@
+import { useRouter } from "next/router";
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
-import { getGraphQLData } from '../lib/topics';
+import styles from '../../styles/Home.module.css';
+import { getGraphQLData } from '../../lib/topics';
 
-
-export async function getStaticProps() {
-  const allTopicsData = await getGraphQLData('react')
-
+export async function getServerSideProps({params}) {
+  const allTopicsData = await getGraphQLData(params.id);
   return {
     props: {
       allTopicsData
@@ -14,11 +13,11 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ allTopicsData }) {
-  let topicString = 'react';
+export default function Post({ allTopicsData }) {
+  const router = useRouter();
+  const topicString = router.query.id;
   let stargazers = allTopicsData.data.topic.stargazerCount;
   let relatedTopics = allTopicsData.data.topic.relatedTopics;
-
   return (
     <div className={styles.container}>
       <Head>
@@ -34,10 +33,10 @@ export default function Home({ allTopicsData }) {
           <p className={styles.description}>
           Find GitHub Topics related to {' '}
           <Link href="/">
-            <a>React</a>
+            <a>{router.query.id}</a>
           </Link>
           </p>
-          <h2>{topicString}</h2>
+        <h2>{topicString}</h2>
           <span>{`stargazers: ${stargazers}`}</span> 
         <h2>Related Topics</h2>
           <ul>
@@ -57,3 +56,5 @@ export default function Home({ allTopicsData }) {
     </div>
   )
 }
+
+
