@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Github-Topics-Project
 
-## Getting Started
+This is a solution app written in React and NextSJ, which allows you to see GitHub topics related to the term React, and when you click have access to the related to others and so on, and their number of stars.  It makes use of the Github GraphQL API implemented with Apollo.
 
-First, run the development server:
+This project makes use of the NextJS framework, which allow this project to have better performance by taking advantage of pre-rendering features and Server Side Rendering, which prove beneficial when consuming data that is supposed to be updated frequently. 
+## Run Locally
+
+First you will need 
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
+  git clone https://github.com/jennifer-manriquez/Github-Topics.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install the dependencies using 
+```bash
+   npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Then go to the project
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+  cd aspiration-challenge
+```
+You will need to create a .env file and place a key
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+You will also need to get a GitHub key to make use of Github GraphQL API. To get one, follow the instructions of the site: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token 
 
-## Learn More
+```bash
+  KEY=your-github-key-here
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Future Improvements for this project include
+- Making a more appropriate error handling. 
+- Including unit tests for the GraphQL queries implemented in Apollo
+- Include a Layout Component to reuse footer and titles. 
+- Make use of a React Components Library for a better design and Use styled components
+- Refactor repeated code in index.js and [id].js. 
