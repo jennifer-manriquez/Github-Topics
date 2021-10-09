@@ -40,6 +40,6 @@ Start the server
 ## Future Improvements for this project include
 - Making a more appropriate error handling. 
 - Including unit tests for the GraphQL queries implemented in Apollo
-- Include a Layout Component to reuse footer and titles. 
+- Include a components folder with at least a Layout Component to reuse footer and titles. 
 - Make use of a React Components Library for a better design and Use styled components
 - Refactor repeated code in index.js and [id].js. 
