@@ -32,10 +32,7 @@ export default function Home({ allTopicsData }) {
           Github Topics
         </h1>
           <p className={styles.description}>
-          Find GitHub Topics related to {' '}
-          <Link href="/">
-            <a>React</a>
-          </Link>
+          Find GitHub Topics related to React
           </p>
           <h2>{topicString}</h2>
           <span>{`stargazers: ${stargazers}`}</span> 

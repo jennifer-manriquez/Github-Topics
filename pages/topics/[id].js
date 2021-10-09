@@ -31,10 +31,7 @@ export default function Post({ allTopicsData }) {
           Github Topics
         </h1>
           <p className={styles.description}>
-          Find GitHub Topics related to {' '}
-          <Link href="/">
-            <a>{router.query.id}</a>
-          </Link>
+          {`Find GitHub Topics related to ${router.query.id}`}
           </p>
         <h2>{topicString}</h2>
           <span>{`stargazers: ${stargazers}`}</span> 
